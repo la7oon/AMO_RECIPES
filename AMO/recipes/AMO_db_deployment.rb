@@ -1,3 +1,6 @@
+node[:deploy].each do |app_name, deploy|
+
+
   execute "mysql-create-table" do
     command "/usr/bin/mysql -u#{deploy[:database][:username]} -p#{deploy[:database][:password]} #{deploy[:database][:database]} -e'CREATE TABLE IF NOT EXISTS `amo_descriptions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -123,3 +126,6 @@
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10052 ;'"
     action :run
   end
+
+
+end
