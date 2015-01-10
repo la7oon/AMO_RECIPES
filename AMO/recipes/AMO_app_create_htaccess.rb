@@ -1,4 +1,4 @@
-file "/srv/www/amo/current/.htaccess" do
+file "/srv/www/amocore/current/.htaccess" do
   content "<IfModule mod_rewrite.c>
    RewriteEngine on
    RewriteRule    ^$ app/webroot/    [L]
