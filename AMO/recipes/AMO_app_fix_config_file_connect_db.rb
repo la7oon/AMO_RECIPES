@@ -1,6 +1,6 @@
 node[:deploy].each do |app_name, deploy|
 
-  template "#{deploy[:deploy_to]}/current/v3.0/app/Config/database.php" do
+  template "#{deploy[:deploy_to]}/current/app/Config/database.php" do
     source "database.php.erb"
     mode 0660
     group deploy[:group]
