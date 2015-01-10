@@ -1,4 +1,4 @@
-file "/srv/www/amocore/current/.htaccess" do
+file "#{deploy[:deploy_to]}/current/v3.0/.htaccess" do
   content "<IfModule mod_rewrite.c>
    RewriteEngine on
    RewriteRule    ^$ app/webroot/    [L]
