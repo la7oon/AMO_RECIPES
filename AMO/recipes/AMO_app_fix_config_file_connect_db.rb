@@ -1,6 +1,6 @@
 node[:deploy].each do |app_name, deploy|
 
-  template "#{deploy[:deploy_to]}/current/v3.0/app/Config/database.php" do
+  template "/srv/www/amocore/current/v3.0/app/Config/database.php" do
     source "database.php.erb"
     mode 0660
     group deploy[:group]
@@ -17,9 +17,11 @@ node[:deploy].each do |app_name, deploy|
       :password => (deploy[:database][:password] rescue nil),
       :db =>       (deploy[:database][:database] rescue nil)
     )
-
+    
+    Chef::Log.info("Sinan Just created database.php file for AMO application")
+   
    only_if do
-     File.directory?("#{deploy[:deploy_to]}/current")
+     File.directory?("/srv/www/amocore/current")
    end
   end
 end
