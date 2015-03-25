@@ -23,8 +23,7 @@ node[:deploy].each do |app_name, deploy|
     variables(
       :host =>     (deploy[:database][:host] rescue nil),
       :user =>     (deploy[:database][:username] rescue nil),
-      :password => (deploy[:database][:password] rescue nil),
-      :db =>       (deploy[:database][:database] rescue nil)
+      :password => (deploy[:database][:password] rescue nil)
     )
 
     Chef::Log.info("Sinan Just created database.php file for AMO application")
